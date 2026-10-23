@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support – SoloCopy</title>
+<meta name="description" content="How to get help with SoloCopy, what to include in your message, and where the app keeps its files.">
+<meta name="color-scheme" content="light dark">
+<meta name="author" content="Bhimashankar">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/solocopy.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="alternate" hreflang="hi" href="hi/support.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SoloCopy">
+<meta property="og:title" content="Support – SoloCopy">
+<meta property="og:description" content="How to get help with SoloCopy, what to include in your message, and where the app keeps its files.">
+<meta property="og:url" content="https://bhimahelavar.github.io/solocopy/support.html">
+<meta property="og:image" content="https://bhimahelavar.github.io/solocopy/assets/solocopy-256.png">
+<meta property="og:image:width" content="256">
+<meta property="og:image:height" content="256">
+<meta property="og:image:alt" content="SoloCopy logo">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="brand" href="index.html" aria-label="SoloCopy home"><img src="assets/solocopy.svg" alt="" width="36" height="36"><span>SoloCopy</span></a>
+<a class="lang-switch" href="hi/support.html" hreflang="hi" lang="hi" aria-label="हिंदी में पढ़ें">हिंदी</a>
+<nav class="site-nav" aria-label="Main">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html">User guide</a></li>
+<li><a href="admin-guide.html">Admin guide</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html" aria-current="page">Support</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap prose">
+<h1>Getting help with SoloCopy</h1>
+
+<h2>Ask for help</h2>
+
+<p>Email: <strong><a href="mailto:bhimarh2020@gmail.com">bhimarh2020@gmail.com</a></strong></p>
+
+<p>In an office, ask your IT department first. They may have set rules for the app (for example, report-only mode).</p>
+
+<h2>What to include</h2>
+
+<ol>
+<li><strong>Diagnostics.</strong> In the app, click <strong>Copy diagnostics</strong>. Then paste it into your email (press Ctrl+V). Check the text first: it can contain folder and file paths.</li>
+<li><strong>App version.</strong> You can see it in <strong>About</strong> in the app. It is also in the diagnostics text.</li>
+<li><strong>Windows version.</strong> For example, Windows 11 24H2. Press Windows key + R, type <code>winver</code> and press Enter to see it.</li>
+<li><strong>What you did.</strong> The steps, one by one.</li>
+<li><strong>What you expected</strong>, and <strong>what happened instead</strong>. Copy the exact error message, or add a screenshot.</li>
+</ol>
+
+<p>Please do not send other people's personal files.</p>
+
+<h2>Where the app keeps its files</h2>
+
+<p>Everything is in <code>%LOCALAPPDATA%\FoundDuplicate</code>. Type <code>%LOCALAPPDATA%\FoundDuplicate</code> in the File Explorer address bar to open it.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Folder or file</th><th scope="col">What it is</th></tr></thead>
+<tbody>
+<tr><td><code>logs\app-YYYYMMDD.log</code></td><td>Logs, one file per day, kept for 14 days. No file contents.</td></tr>
+<tr><td><code>audit\audit-YYYY-MM.jsonl</code></td><td>Delete history, one file per month.</td></tr>
+<tr><td><code>settings.json</code></td><td>Your settings.</td></tr>
+</tbody>
+</table></div>
+
+<p>If you installed SoloCopy from the Microsoft Store, Windows may keep these files under <code>%LOCALAPPDATA%\Packages\</code> instead. <strong>Copy diagnostics</strong> shows the folders the app really uses.</p>
+
+<p>Support may ask you for a log file. Send it only if you are happy to share what is in it.</p>
+
+<h2>Guides</h2>
+
+<ul>
+<li><a href="user-guide.html#install">Install guide</a>: installing, updating and removing the app</li>
+<li><a href="admin-guide.html">Admin guide</a>: for IT staff, Group Policy and central delete history</li>
+<li><a href="privacy.html">Privacy policy</a>: what the app stores, and that it sends nothing</li>
+</ul>
+
+<h2>Security problems</h2>
+
+<p>Do not report security problems in public, or as a normal support question. Report them privately by email to <a href="mailto:bhimarh2020@gmail.com">bhimarh2020@gmail.com</a> and write in the subject that it is a security report.</p>
+
+<h2>Support for organisations</h2>
+
+<p>The app is free. Organisations that need priority support, deployment help or custom terms can buy paid support. Write to <a href="mailto:bhimarh2020@gmail.com">bhimarh2020@gmail.com</a>.</p>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<nav aria-label="Site">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html">User guide</a></li>
+<li><a href="admin-guide.html">Admin guide</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html" aria-current="page">Support</a></li>
+</ul>
+</nav>
+<p>SoloCopy 0.9.0 beta · Free for home and work · Published by Bhimashankar, India.<br>This website uses no cookies, no scripts and no trackers.</p>
+<p>Copyright © 2026 Bhimashankar · <a href="hi/support.html" hreflang="hi" lang="hi">हिंदी</a></p>
+</div>
+</footer>
+</body>
+</html>

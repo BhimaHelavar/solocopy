@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>गोपनीयता नीति – SoloCopy</title>
+<meta name="description" content="SoloCopy गोपनीयता नीति: कोई खाता नहीं, कोई टेलीमेट्री नहीं, कोई नेटवर्क कॉल नहीं। आपकी फ़ाइलें और हटाने का इतिहास आपके पीसी पर ही रहते हैं।">
+<meta name="color-scheme" content="light dark">
+<meta name="author" content="Bhimashankar">
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" href="../assets/solocopy.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" hreflang="en" href="../privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SoloCopy">
+<meta property="og:title" content="गोपनीयता नीति – SoloCopy">
+<meta property="og:description" content="SoloCopy गोपनीयता नीति: कोई खाता नहीं, कोई टेलीमेट्री नहीं, कोई नेटवर्क कॉल नहीं। आपकी फ़ाइलें और हटाने का इतिहास आपके पीसी पर ही रहते हैं।">
+<meta property="og:url" content="https://bhimahelavar.github.io/solocopy/hi/privacy.html">
+<meta property="og:image" content="https://bhimahelavar.github.io/solocopy/assets/solocopy-256.png">
+<meta property="og:image:width" content="256">
+<meta property="og:image:height" content="256">
+<meta property="og:image:alt" content="SoloCopy logo">
+<meta property="og:locale" content="hi_IN">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<a class="skip-link" href="#main">मुख्य सामग्री पर जाएँ</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="brand" href="index.html" aria-label="SoloCopy होम"><img src="../assets/solocopy.svg" alt="" width="36" height="36"><span>SoloCopy</span></a>
+<a class="lang-switch" href="../privacy.html" hreflang="en" lang="en" aria-label="Read in English">English</a>
+<nav class="site-nav" aria-label="मुख्य">
+<ul>
+<li><a href="index.html">होम</a></li>
+<li><a href="user-guide.html">उपयोग गाइड</a></li>
+<li><a href="admin-guide.html">एडमिन गाइड</a></li>
+<li><a href="privacy.html" aria-current="page">गोपनीयता</a></li>
+<li><a href="terms.html">शर्तें</a></li>
+<li><a href="support.html">सहायता</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap prose">
+<h1>SoloCopy गोपनीयता नीति</h1>
+
+<div class="notice" role="note"><p><strong>गोपनीयता नीति का मसौदा।</strong></p></div>
+
+<p>अंतिम अद्यतन: 23 अक्टूबर 2026<br>
+लागू: SoloCopy 0.9.0 (सार्वजनिक बीटा) और उसके बाद के संस्करण<br>
+ऑनलाइन संस्करण: https://bhimahelavar.github.io/solocopy/privacy</p>
+
+<p>यह नीति अंग्रेज़ी नीति (<a href="../privacy.html" hreflang="en">PRIVACY.md</a>) का हिंदी अनुवाद है। यदि दोनों में कोई अंतर हो, तो अंग्रेज़ी संस्करण मान्य होगा।</p>
+
+<p>SoloCopy – Duplicate File Cleaner (&quot;ऐप&quot;) के प्रकाशक Bhimashankar (&quot;हम&quot;, &quot;प्रकाशक&quot;) हैं। यह नीति बताती है कि ऐप क्या सहेजता है और क्या नहीं भेजता।</p>
+
+<h2>सारांश</h2>
+
+<ul>
+<li>कोई खाता नहीं है और साइन-इन नहीं करना होता।</li>
+<li>कोई टेलीमेट्री, एनालिटिक्स या ट्रैकिंग नहीं है।</li>
+<li>ऐप अपने आप अपडेट की जाँच नहीं करता।</li>
+<li>ऐप स्वयं कोई नेटवर्क कॉल नहीं करता। यह पूरी तरह ऑफ़लाइन काम करता है।</li>
+<li>आपकी फ़ाइलें, फ़ाइलों के नाम और हटाने का इतिहास आपके पीसी पर ही रहते हैं।</li>
+<li>हमें, यानी प्रकाशक को, ऐप से कुछ भी नहीं मिलता।</li>
+</ul>
+
+<h2>ऐप क्या सहेजता है और कहाँ</h2>
+
+<p>सब कुछ हर Windows उपयोगकर्ता के लिए अलग से <code>%LOCALAPPDATA%\FoundDuplicate</code> फ़ोल्डर में सहेजा जाता है (इस फ़ोल्डर का नाम पुराना ही है, जब ऐप का नाम Found Duplicate था)।</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">क्या</th><th scope="col">कहाँ</th><th scope="col">इसमें क्या है</th><th scope="col">कब तक</th></tr></thead>
+<tbody>
+<tr><td>हटाने का इतिहास</td><td><code>audit\audit-YYYY-MM.jsonl</code></td><td>हर उस फ़ाइल के लिए जिसे आपने हटाने को कहा: तारीख और समय, Windows उपयोगकर्ता नाम, कंप्यूटर का नाम, फ़ाइल का पथ, फ़ाइल का आकार, परिणाम (जैसे &quot;रीसायकल बिन में भेजी गई&quot;), फ़ाइल की सामग्री का SHA-256 फ़िंगरप्रिंट, और रखी गई प्रति का पथ। पुनर्स्थापित की गई फ़ाइलें भी दर्ज होती हैं।</td><td>जब तक आप इसे न हटाएँ। केवल नई पंक्तियाँ जोड़ी जाती हैं।</td></tr>
+<tr><td>लॉग</td><td><code>logs\app-YYYYMMDD.log</code></td><td>तकनीकी संदेश, जैसे ऐप का संस्करण, Windows का संस्करण, त्रुटियाँ, फ़ोल्डर पथ और गिनती। फ़ाइलों की सामग्री कभी नहीं।</td><td>14 दिन, फिर ऐप इन्हें हटा देता है।</td></tr>
+<tr><td>सेटिंग्स</td><td><code>settings.json</code></td><td>आपके चुनाव: पिछली बार खोजा गया फ़ोल्डर, खोज के विकल्प, कौन-सी प्रति रखनी है का नियम, और भाषा।</td><td>जब तक आप इसे न हटाएँ।</td></tr>
+<tr><td>ब्राउज़र इंजन का डेटा</td><td><code>WebView2\</code></td><td>वह डेटा जिसकी Microsoft Edge WebView2 इंजन को ऐप की विंडो दिखाने के लिए ज़रूरत होती है।</td><td>जब तक आप इसे न हटाएँ।</td></tr>
+</tbody>
+</table></div>
+
+<p><strong>फ़ाइलों की सामग्री।</strong> ऐप किसी फ़ाइल की सामग्री केवल एक फ़िंगरप्रिंट (हैश) बनाने के लिए पढ़ता है, ताकि बिल्कुल एक जैसी प्रतियाँ मिल सकें। सामग्री न कभी सहेजी जाती है, न कहीं भेजी जाती है।</p>
+
+<p><strong>हटाई गई फ़ाइलें।</strong> ऐप फ़ाइलों को Windows के रीसायकल बिन में भेजता है। यह फ़ाइलों को कभी स्थायी रूप से नहीं हटाता। जिन ड्राइव पर रीसायकल बिन नहीं होता (जैसे नेटवर्क और USB ड्राइव), वहाँ यह फ़ाइलें हटाने से मना कर देता है। आप <strong>इतिहास</strong> में <strong>पुनर्स्थापित करें</strong> से, या रीसायकल बिन से, फ़ाइलें वापस ला सकते हैं।</p>
+
+<p><strong>PDF रिपोर्ट।</strong> PDF बनाने के लिए ऐप आपके Windows के अस्थायी (temporary) फ़ोल्डर में एक अस्थायी पेज लिखता है और PDF बनते ही उसे हटा देता है।</p>
+
+<h2>क्या कभी आपके पीसी से बाहर नहीं जाता</h2>
+
+<ul>
+<li>आपकी फ़ाइलें और उनकी सामग्री</li>
+<li>फ़ाइलों के नाम और फ़ोल्डर पथ</li>
+<li>हटाने का इतिहास, लॉग और सेटिंग्स (नीचे बताए गए IT प्रशासक वाले मामले को छोड़कर)</li>
+<li>आपके, आपके पीसी के, या आप ऐप का उपयोग कैसे करते हैं, इसके बारे में जानकारी</li>
+</ul>
+
+<p>ऐप में ऐसा कोई कोड नहीं है जो इंटरनेट पर डेटा भेजे। ऐप अपनी विंडो उन फ़ाइलों से बनाता है जो ऐप के साथ इंस्टॉल होती हैं, एक काल्पनिक स्थानीय पते (<code>app.founddup.local</code>) के अंतर्गत। यह पता नेटवर्क का उपयोग नहीं करता।</p>
+
+<p><strong>लिंक।</strong> कुछ लिंक बाहरी वेबसाइटों पर ले जाते हैं, जैसे WebView2 न होने पर Microsoft का WebView2 डाउनलोड पेज। ये आपके सामान्य वेब ब्राउज़र में खुलते हैं, और केवल तब जब आप उन पर क्लिक करें। तब उस वेबसाइट की अपनी गोपनीयता नीति लागू होती है।</p>
+
+<h2>जब आपका IT प्रशासक इतिहास का फ़ोल्डर तय करे</h2>
+
+<p>किसी कार्यालय में IT प्रशासक Group Policy (सेटिंग <code>AuditLogFolder</code>) से हटाने का इतिहास किसी दूसरे फ़ोल्डर में, जैसे किसी नेटवर्क सर्वर के फ़ोल्डर में, सहेजवा सकता है। तब:</p>
+
+<ul>
+<li>हटाने का इतिहास वहाँ सहेजा जाता है जहाँ IT तय करे, और उस पर आपके संगठन का नियंत्रण होता है;</li>
+<li>उस पर इस नीति के बजाय आपके संगठन के अपने नियम लागू होते हैं;</li>
+<li>यदि वह फ़ोल्डर उपलब्ध न हो, तो ऐप इतिहास को आपके पीसी पर ही सहेज लेता है।</li>
+</ul>
+
+<p>यह इतिहास भी प्रकाशक को नहीं मिलता। इसका उपयोग कैसे होता है, यह अपने IT विभाग से पूछें।</p>
+
+<h2>Microsoft Edge WebView2</h2>
+
+<p>ऐप की विंडो Microsoft Edge WebView2 Runtime का उपयोग करती है। यह Microsoft द्वारा बनाया गया Windows का एक हिस्सा है, जिसकी Microsoft की अपनी गोपनीयता शर्तें हैं। WebView2 अपने अपडेट के लिए Microsoft से संपर्क कर सकता है, और आपकी Windows सेटिंग्स के अनुसार Microsoft को डायग्नोस्टिक डेटा भेज सकता है। प्रकाशक का इस पर कोई नियंत्रण नहीं है और प्रकाशक को इसमें से कोई डेटा नहीं मिलता। विवरण के लिए Microsoft का गोपनीयता कथन देखें।</p>
+
+<h2>निदान कॉपी करें (Copy diagnostics)</h2>
+
+<p><strong>निदान कॉपी करें</strong> (अंग्रेज़ी में &quot;Copy diagnostics&quot;) बटन कुछ तकनीकी जानकारी आपके क्लिपबोर्ड पर कॉपी करता है: ऐप और Windows के संस्करण, WebView2 का संस्करण, ऐप के फ़ोल्डर और हाल की लॉग पंक्तियाँ। यह केवल तब होता है जब आप बटन पर क्लिक करें। कुछ भी भेजा नहीं जाता। इसे कहीं चिपकाना है या नहीं, जैसे सहायता के लिए ईमेल में, यह आप तय करते हैं। साझा करने से पहले पाठ जाँच लें, क्योंकि लॉग पंक्तियों में फ़ोल्डर और फ़ाइल पथ हो सकते हैं।</p>
+
+<h2>निर्यात (Export)</h2>
+
+<p>जब आप इतिहास को CSV या PDF में निर्यात करते हैं, तो फ़ाइल केवल उसी जगह सहेजी जाती है जो आप चुनें। ऐप उसे कहीं नहीं भेजता।</p>
+
+<h2>आपके विकल्प</h2>
+
+<ul>
+<li><strong>अपना इतिहास, लॉग और सेटिंग्स हटाने के लिए:</strong> ऐप बंद करें और <code>%LOCALAPPDATA%\FoundDuplicate</code> फ़ोल्डर हटा दें। (इसे खोजने के लिए File Explorer के पता बार में <code>%LOCALAPPDATA%</code> लिखें।)</li>
+<li><strong>अनइंस्टॉल करने पर यह फ़ोल्डर जान-बूझकर रखा जाता है।</strong> हटाने के इतिहास की बाद में ज़रूरत पड़ सकती है। यदि आप इसे हटाना चाहते हैं, तो फ़ोल्डर स्वयं हटाएँ।</li>
+<li><strong>Microsoft Store संस्करण:</strong> Windows इन फ़ाइलों को इसके बजाय ऐप के अपने निजी फ़ोल्डर में, <code>%LOCALAPPDATA%\Packages\</code> के अंतर्गत, रख सकता है। Store संस्करण अनइंस्टॉल करने पर Windows उस फ़ोल्डर को हटा देता है।</li>
+<li><strong>भाषा:</strong> आप ऐप में अंग्रेज़ी या हिंदी चुन सकते हैं।</li>
+</ul>
+
+<h2>बच्चे</h2>
+
+<p>यह ऐप फ़ाइलें सँभालने का एक सामान्य साधन है। यह बच्चों के लिए नहीं बनाया गया है, और यह बच्चों सहित किसी से भी व्यक्तिगत डेटा एकत्र नहीं करता।</p>
+
+<h2>भारत का डिजिटल व्यक्तिगत डेटा संरक्षण अधिनियम, 2023</h2>
+
+<p>ऐप प्रकाशक के लिए कोई व्यक्तिगत डेटा एकत्र नहीं करता। प्रकाशक ऐप के माध्यम से आपके व्यक्तिगत डेटा का प्रसंस्करण नहीं करता।</p>
+
+<p>आपके पीसी पर हटाने के इतिहास में Windows उपयोगकर्ता नाम, कंप्यूटर का नाम और फ़ाइल पथ होते हैं। जब कोई संगठन ऐप का उपयोग करता है, तो वह संगठन तय करता है कि यह इतिहास कैसे रखा, उपयोग और हटाया जाए। डिजिटल व्यक्तिगत डेटा संरक्षण अधिनियम, 2023 और अन्य कानूनों के अंतर्गत, हटाने के इतिहास सहित अपने अभिलेखों की ज़िम्मेदारी उस संगठन की है।</p>
+
+<h2>इस नीति में बदलाव</h2>
+
+<p>यदि हम यह नीति बदलते हैं, तो &quot;अंतिम अद्यतन&quot; की तारीख बदलेंगे और नया संस्करण https://bhimahelavar.github.io/solocopy/privacy पर प्रकाशित करेंगे। महत्वपूर्ण बदलाव रिलीज़ नोट्स में भी बताए जाएँगे।</p>
+
+<h2>संपर्क</h2>
+
+<p>गोपनीयता से जुड़े प्रश्न: <a href="mailto:bhimarh2020@gmail.com">bhimarh2020@gmail.com</a><br>
+प्रकाशक: Bhimashankar, भारत</p>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<nav aria-label="साइट">
+<ul>
+<li><a href="index.html">होम</a></li>
+<li><a href="user-guide.html">उपयोग गाइड</a></li>
+<li><a href="admin-guide.html">एडमिन गाइड</a></li>
+<li><a href="privacy.html" aria-current="page">गोपनीयता</a></li>
+<li><a href="terms.html">शर्तें</a></li>
+<li><a href="support.html">सहायता</a></li>
+</ul>
+</nav>
+<p>SoloCopy 0.9.0 beta · घर और कार्यालय के लिए मुफ़्त · प्रकाशक: Bhimashankar, भारत।<br>यह वेबसाइट कोई कुकी, स्क्रिप्ट या ट्रैकर उपयोग नहीं करती।</p>
+<p>Copyright © 2026 Bhimashankar · <a href="../privacy.html" hreflang="en" lang="en">English</a></p>
+</div>
+</footer>
+</body>
+</html>

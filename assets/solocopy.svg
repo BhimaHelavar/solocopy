@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- SoloCopy app icon (master). tools/make-icons.ps1 draws these same shapes. -->
+  <defs>
+    <linearGradient id="tile" x1="8" y1="8" x2="248" y2="248" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2F80ED"/>
+      <stop offset="1" stop-color="#1B4FBF"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="56" ry="56" fill="url(#tile)"/>
+  <!-- Faded copies behind (96 x 136, radius 10, fold 26) -->
+  <path d="M60 70H120L146 96V196A10 10 0 0 1 136 206H60A10 10 0 0 1 50 196V80A10 10 0 0 1 60 70Z" fill="#FFFFFF" fill-opacity="0.18"/>
+  <path d="M78 58H138L164 84V184A10 10 0 0 1 154 194H78A10 10 0 0 1 68 184V68A10 10 0 0 1 78 58Z" fill="#FFFFFF" fill-opacity="0.38"/>
+  <!-- The kept page (112 x 156, radius 12, fold 30) -->
+  <path d="M100 44H170L200 74V188A12 12 0 0 1 188 200H100A12 12 0 0 1 88 188V56A12 12 0 0 1 100 44Z" fill="#FFFFFF"/>
+  <path d="M170 44V74H200Z" fill="#C9DBFA"/>
+  <!-- The "1" -->
+  <path d="M132 96L146 86V152" fill="none" stroke="#2F80ED" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Tick badge -->
+  <circle cx="186" cy="182" r="34" fill="#22A06B" stroke="#FFFFFF" stroke-width="7"/>
+  <path d="M170 182L181 193L202 170" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

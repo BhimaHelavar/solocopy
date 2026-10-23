@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy – SoloCopy</title>
+<meta name="description" content="SoloCopy privacy policy: no account, no telemetry, no network calls. Your files and delete history stay on your PC.">
+<meta name="color-scheme" content="light dark">
+<meta name="author" content="Bhimashankar">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/solocopy.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="alternate" hreflang="hi" href="hi/privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SoloCopy">
+<meta property="og:title" content="Privacy policy – SoloCopy">
+<meta property="og:description" content="SoloCopy privacy policy: no account, no telemetry, no network calls. Your files and delete history stay on your PC.">
+<meta property="og:url" content="https://bhimahelavar.github.io/solocopy/privacy.html">
+<meta property="og:image" content="https://bhimahelavar.github.io/solocopy/assets/solocopy-256.png">
+<meta property="og:image:width" content="256">
+<meta property="og:image:height" content="256">
+<meta property="og:image:alt" content="SoloCopy logo">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="brand" href="index.html" aria-label="SoloCopy home"><img src="assets/solocopy.svg" alt="" width="36" height="36"><span>SoloCopy</span></a>
+<a class="lang-switch" href="hi/privacy.html" hreflang="hi" lang="hi" aria-label="हिंदी में पढ़ें">हिंदी</a>
+<nav class="site-nav" aria-label="Main">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html">User guide</a></li>
+<li><a href="admin-guide.html">Admin guide</a></li>
+<li><a href="privacy.html" aria-current="page">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html">Support</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap prose">
+<h1>SoloCopy Privacy Policy</h1>
+
+<div class="notice" role="note"><p><strong>Draft privacy policy.</strong></p></div>
+
+<p>Last updated: 23 October 2026<br>
+Applies to SoloCopy 0.9.0 (public beta) and later<br>
+Online version: https://bhimahelavar.github.io/solocopy/privacy</p>
+
+<p>SoloCopy – Duplicate File Cleaner (&quot;the app&quot;) is published by Bhimashankar (&quot;we&quot;, &quot;the publisher&quot;). This policy explains what the app stores and what it does not send.</p>
+
+<h2>Summary</h2>
+
+<ul>
+<li>There is no account and no sign-in.</li>
+<li>There is no telemetry, no analytics and no tracking.</li>
+<li>The app does not check for updates by itself.</li>
+<li>The app itself makes no network calls. It works fully offline.</li>
+<li>Your files, file names and delete history stay on your PC.</li>
+<li>We, the publisher, receive nothing from the app.</li>
+</ul>
+
+<h2>What the app stores and where</h2>
+
+<p>Everything is stored per Windows user in <code>%LOCALAPPDATA%\FoundDuplicate</code> (the folder kept its old name, from when the app was called Found Duplicate).</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">What</th><th scope="col">Where</th><th scope="col">What it contains</th><th scope="col">How long</th></tr></thead>
+<tbody>
+<tr><td>Delete history</td><td><code>audit\audit-YYYY-MM.jsonl</code></td><td>For each file you asked to delete: date and time, Windows user name, computer name, file path, file size, result (for example &quot;Moved to the Recycle Bin&quot;), a SHA-256 fingerprint of the file's content, and the path of the copy that was kept. Restores are recorded too.</td><td>Until you delete it. New lines are only added.</td></tr>
+<tr><td>Logs</td><td><code>logs\app-YYYYMMDD.log</code></td><td>Technical messages, such as app version, Windows version, errors, folder paths and counts. Never file contents.</td><td>14 days, then deleted by the app.</td></tr>
+<tr><td>Settings</td><td><code>settings.json</code></td><td>Your choices: last folder searched, search options, keep rule and language.</td><td>Until you delete it.</td></tr>
+<tr><td>Browser engine data</td><td><code>WebView2\</code></td><td>Data that the Microsoft Edge WebView2 engine needs to draw the app window.</td><td>Until you delete it.</td></tr>
+</tbody>
+</table></div>
+
+<p><strong>File contents.</strong> The app reads a file's contents only to calculate a fingerprint (a hash), to find exact copies. The contents are never stored and never sent anywhere.</p>
+
+<p><strong>Deleted files.</strong> The app moves files to the Windows Recycle Bin. It never deletes files permanently. It refuses to delete on drives without a Recycle Bin (such as network and USB drives). You can put files back with <strong>Restore</strong> in History, or from the Recycle Bin.</p>
+
+<p><strong>PDF reports.</strong> To make a PDF, the app writes a temporary page to your Windows temporary folder and deletes it right after the PDF is made.</p>
+
+<h2>What never leaves your PC</h2>
+
+<ul>
+<li>your files and their contents</li>
+<li>file names and folder paths</li>
+<li>the delete history, logs and settings (except in the IT administrator case below)</li>
+<li>information about you, your PC or how you use the app</li>
+</ul>
+
+<p>The app has no code that sends data over the internet. It draws its window from files installed with the app, under a made-up local address (<code>app.founddup.local</code>). This address does not use the network.</p>
+
+<p><strong>Links.</strong> Some links point to outside websites, for example the Microsoft download page for WebView2, if WebView2 is missing. These open in your normal web browser, and only when you click them. That website's own privacy policy then applies.</p>
+
+<h2>When your IT administrator sets a history folder</h2>
+
+<p>In an office, an IT administrator can use Group Policy (setting <code>AuditLogFolder</code>) to save the delete history in another folder, for example a folder on a network server. Then:</p>
+
+<ul>
+<li>the delete history is stored where IT chooses, and your organisation controls it;</li>
+<li>your organisation's own rules apply to it, not this policy;</li>
+<li>if that folder cannot be reached, the app saves the history on your PC instead.</li>
+</ul>
+
+<p>The publisher does not receive this history either. Ask your IT department how they use it.</p>
+
+<h2>Microsoft Edge WebView2</h2>
+
+<p>The app window uses the Microsoft Edge WebView2 Runtime. This is a part of Windows made by Microsoft. It has its own Microsoft privacy terms. WebView2 may contact Microsoft for its own updates, and may send diagnostic data to Microsoft according to your Windows settings. The publisher does not control this and receives none of this data. See Microsoft's privacy statement for details.</p>
+
+<h2>Copy diagnostics</h2>
+
+<p>The <strong>Copy diagnostics</strong> button copies some technical details to your clipboard: app and Windows versions, WebView2 version, the app's folders and the most recent log lines. This happens only when you click the button. Nothing is sent. You decide whether to paste it somewhere, for example into an email to support. Check the text before you share it, because log lines can contain folder and file paths.</p>
+
+<h2>Exports</h2>
+
+<p>When you export the history to CSV or PDF, the file is saved only in the place you choose. The app does not send it anywhere.</p>
+
+<h2>Your choices</h2>
+
+<ul>
+<li><strong>Remove your history, logs and settings:</strong> close the app and delete the folder <code>%LOCALAPPDATA%\FoundDuplicate</code>. (Type <code>%LOCALAPPDATA%</code> in the File Explorer address bar to find it.)</li>
+<li><strong>Uninstalling keeps this folder on purpose.</strong> The delete history may be needed later. Delete the folder by hand if you want it gone.</li>
+<li><strong>Microsoft Store version:</strong> Windows may keep these files in the app's own private folder instead, under <code>%LOCALAPPDATA%\Packages\</code>. Windows removes that folder when you uninstall the Store version.</li>
+<li><strong>Language:</strong> you can choose English or Hindi in the app.</li>
+</ul>
+
+<h2>Children</h2>
+
+<p>The app is a general tool for managing files. It is not aimed at children, and it does not collect personal data from anyone, including children.</p>
+
+<h2>India's Digital Personal Data Protection Act, 2023</h2>
+
+<p>The app does not collect any personal data for the publisher. The publisher does not process your personal data through the app.</p>
+
+<p>The delete history on your PC contains a Windows user name, a computer name and file paths. When an organisation uses the app, that organisation decides how this history is kept, used and deleted. The organisation is responsible for its own records, including the delete history, under the Digital Personal Data Protection Act, 2023 and other laws.</p>
+
+<h2>Changes to this policy</h2>
+
+<p>If we change this policy, we will update the &quot;Last updated&quot; date and publish the new version at https://bhimahelavar.github.io/solocopy/privacy. Important changes will also be listed in the release notes.</p>
+
+<h2>Contact</h2>
+
+<p>Questions about privacy: <a href="mailto:bhimarh2020@gmail.com">bhimarh2020@gmail.com</a><br>
+Publisher: Bhimashankar, India</p>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<nav aria-label="Site">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html">User guide</a></li>
+<li><a href="admin-guide.html">Admin guide</a></li>
+<li><a href="privacy.html" aria-current="page">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html">Support</a></li>
+</ul>
+</nav>
+<p>SoloCopy 0.9.0 beta · Free for home and work · Published by Bhimashankar, India.<br>This website uses no cookies, no scripts and no trackers.</p>
+<p>Copyright © 2026 Bhimashankar · <a href="hi/privacy.html" hreflang="hi" lang="hi">हिंदी</a></p>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User guide – SoloCopy</title>
+<meta name="description" content="How to install SoloCopy, find duplicate files, move extra copies to the Recycle Bin and restore them.">
+<meta name="color-scheme" content="light dark">
+<meta name="author" content="Bhimashankar">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/solocopy.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="alternate" hreflang="hi" href="hi/user-guide.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SoloCopy">
+<meta property="og:title" content="User guide – SoloCopy">
+<meta property="og:description" content="How to install SoloCopy, find duplicate files, move extra copies to the Recycle Bin and restore them.">
+<meta property="og:url" content="https://bhimahelavar.github.io/solocopy/user-guide.html">
+<meta property="og:image" content="https://bhimahelavar.github.io/solocopy/assets/solocopy-256.png">
+<meta property="og:image:width" content="256">
+<meta property="og:image:height" content="256">
+<meta property="og:image:alt" content="SoloCopy logo">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="brand" href="index.html" aria-label="SoloCopy home"><img src="assets/solocopy.svg" alt="" width="36" height="36"><span>SoloCopy</span></a>
+<a class="lang-switch" href="hi/user-guide.html" hreflang="hi" lang="hi" aria-label="हिंदी में पढ़ें">हिंदी</a>
+<nav class="site-nav" aria-label="Main">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html" aria-current="page">User guide</a></li>
+<li><a href="admin-guide.html">Admin guide</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html">Support</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap prose">
+<h1>SoloCopy user guide</h1>
+<p>SoloCopy finds duplicate files in a folder and moves the extra copies to the Recycle Bin. This guide explains each step in plain language.</p>
+<nav class="toc" aria-labelledby="toc-title">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#install">Install SoloCopy</a></li>
+<li><a href="#smartscreen">“Windows protected your PC” (SmartScreen)</a></li>
+<li><a href="#choose">Step 1: Choose a folder</a></li>
+<li><a href="#search">Step 2: Search</a></li>
+<li><a href="#review">Step 3: Review and clean up</a></li>
+<li><a href="#recycle">Move to the Recycle Bin</a></li>
+<li><a href="#restore">Get files back</a></li>
+<li><a href="#history">History and export</a></li>
+<li><a href="#language">Language</a></li>
+<li><a href="#diagnostics">Copy diagnostics</a></li>
+<li><a href="#office">At work: rules from your IT team</a></li>
+<li><a href="#update">Update or uninstall</a></li>
+</ul>
+</nav>
+
+<h2 id="install">Install SoloCopy</h2>
+<ol>
+<li>Download the <code>.msi</code> file from the <a href="index.html#download">download section</a>. Only install files from this website, the Microsoft Store or the official release page.</li>
+<li>Optional but recommended: check the file. Open PowerShell in the download folder and run the command below. Compare the result with the line for that file in <code>SHA256SUMS.txt</code>. If they are not the same, do not install the file.
+<pre><code>Get-FileHash .\SoloCopy-0.9.0-x64.msi -Algorithm SHA256</code></pre></li>
+<li>Double-click the <code>.msi</code> file and follow the steps. Windows asks for admin rights, because the app is installed for all users of the PC.</li>
+<li>Start the app from the Start menu: <strong>SoloCopy</strong>.</li>
+</ol>
+<p>You do not need to install .NET. The app needs the Microsoft Edge WebView2 Runtime, which is built into Windows 11 and already on Windows 10 PCs that get updates. If it is missing, the app offers to open the download page when it first starts.</p>
+
+<h2 id="smartscreen">“Windows protected your PC” (SmartScreen)</h2>
+<p>Until the app is signed with a paid code-signing certificate, Windows may show <strong>Windows protected your PC</strong> when you open the downloaded installer.</p>
+<ul>
+<li>If you got the file from an official place and the checksum matches, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+<li>If you are not sure where the file came from, do not run it.</li>
+</ul>
+<p>Even with a paid certificate, the warning can still appear for a while. It goes away as more people install the app.</p>
+
+<h2 id="choose">Step 1: Choose a folder</h2>
+<p>Click <strong>Choose a folder</strong> and pick the folder to check, for example your Documents folder or a shared office folder on this PC. The panel also shows SoloCopy's promises: nothing is deleted until you confirm, deleted files go to the Recycle Bin, and at least one copy of every file is always kept.</p>
+
+<h2 id="search">Step 2: Search</h2>
+<p>Choose what to look for:</p>
+<ul>
+<li><strong>Exact copies</strong> (recommended): files with exactly the same content, even if their names are different. These are safe to remove.</li>
+<li><strong>Files with the same name</strong>: for example “Report.pdf” and “Report (1).pdf”. They may be different versions, so you decide which to keep.</li>
+</ul>
+<p>Settings you rarely need are under <strong>More options</strong>:</p>
+<ul>
+<li>Also check folders inside this folder (subfolders).</li>
+<li>Treat “Report (1)”, “Report - Copy” and “Copy of Report” as the same name.</li>
+<li>Include hidden and system files (not recommended).</li>
+<li>Only these file types, for example <code>pdf, docx, xlsx</code>. Leave it empty to check all files.</li>
+</ul>
+<p>Click <strong>Search for duplicates</strong>. A progress bar shows while SoloCopy searches. Click <strong>Stop</strong> to cancel; nothing is changed.</p>
+
+<h2 id="review">Step 3: Review and clean up</h2>
+<p>The results show how many files were checked, how many extra copies were found, and how much space can be freed.</p>
+<h3>Exact copies tab</h3>
+<p><strong>Quick clean up</strong> marks every extra copy for you. First choose which copy to keep:</p>
+<ul>
+<li>the oldest copy (the original),</li>
+<li>the most recently changed copy, or</li>
+<li>the copy in the main folder (shortest path).</li>
+</ul>
+<p>Then click <strong>Mark extra copies</strong>. You can still change any file below.</p>
+<h3>Keep or Delete</h3>
+<p>Every file has a <strong>Keep / Delete</strong> switch. Click <strong>Open folder</strong> to look at a file in File Explorer first. SoloCopy will not let you mark the last kept copy: choose <strong>Keep</strong> on another copy first.</p>
+<h3>Same name, check first tab</h3>
+<p>Files here have the same name but may have different content, for example an old and a new version of a letter. Each file is marked “Same content as another file here” or “Different content”. Nothing is selected on its own: look at the files and choose <strong>Keep</strong> or <strong>Delete</strong> yourself.</p>
+
+<h2 id="recycle">Move to the Recycle Bin</h2>
+<p>The bar at the bottom shows how many files are marked and how much space they free. Click <strong>Move to Recycle Bin</strong>, check the summary, and click <strong>Yes, move to Recycle Bin</strong>.</p>
+<p>A report then says what was moved and lists any file that was left in place, with the reason. SoloCopy leaves a file in place when:</p>
+<ul>
+<li>it changed after the search (search again first);</li>
+<li>deleting it would remove the last copy;</li>
+<li>it is on a network or USB drive, where Windows would delete it permanently;</li>
+<li>its path is too long for the Recycle Bin (more than 260 characters).</li>
+</ul>
+
+<h2 id="restore">Get files back</h2>
+<p>Files that SoloCopy deletes go to the Windows Recycle Bin. To get one back, use either way:</p>
+<ul>
+<li>In SoloCopy, open <strong>History</strong>, select the files and click <strong>Restore</strong>. They go back to where they were.</li>
+<li>Or open the Recycle Bin on the desktop, right-click the file and choose <strong>Restore</strong>.</li>
+</ul>
+<p>Once the Recycle Bin is emptied, files cannot be restored. Keep your own backups of important files.</p>
+
+<h2 id="history">History and export</h2>
+<p>Click <strong>History</strong> at the top of the app to see every file that someone asked to delete on this PC and what happened to it. Click <strong>Back to search</strong> to return.</p>
+<ul>
+<li><strong>Export to CSV</strong> saves the full history as a file you can open in Excel.</li>
+<li><strong>Export to PDF</strong> saves a report you can print or share.</li>
+</ul>
+<p>The file is saved only where you choose. SoloCopy does not send it anywhere.</p>
+
+<h2 id="language">Language</h2>
+<p>SoloCopy works in English and <span lang="hi">हिंदी</span>. Use <strong>Language</strong> at the top of the app to switch. The app remembers your choice.</p>
+
+<h2 id="diagnostics">Copy diagnostics</h2>
+<p>If something goes wrong, click <strong>Copy diagnostics</strong> at the top right. It copies the app and Windows versions, the app's folders and the most recent log lines to your clipboard, ready to paste into an email to support or your IT team. Nothing is sent by the app. Check the text before you share it: it can contain folder and file paths. See <a href="support.html">Support</a>.</p>
+
+<h2 id="office">At work: rules from your IT team</h2>
+<p>If you see <strong>Managed by your organization</strong>, your IT team has set rules for SoloCopy. For example, in <strong>report-only mode</strong> you can search, view History and export, but you cannot move files to the Recycle Bin. Your IT team may also limit which folders can be searched, or block network drives. Ask them if something is not allowed.</p>
+
+<h2 id="update">Update or uninstall</h2>
+<ul>
+<li><strong>Update:</strong> install the newer MSI over the old one. You do not need to uninstall first.</li>
+<li><strong>Uninstall:</strong> <strong>Settings &gt; Apps &gt; Installed apps &gt; SoloCopy &gt; Uninstall</strong>.</li>
+</ul>
+<p>Uninstalling keeps your delete history, logs and settings in <code>%LOCALAPPDATA%\FoundDuplicate</code> on purpose, because the history may be needed later. Delete that folder by hand if you want it gone. (The folder keeps the app's former name, Found Duplicate.)</p>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<nav aria-label="Site">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html" aria-current="page">User guide</a></li>
+<li><a href="admin-guide.html">Admin guide</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html">Support</a></li>
+</ul>
+</nav>
+<p>SoloCopy 0.9.0 beta · Free for home and work · Published by Bhimashankar, India.<br>This website uses no cookies, no scripts and no trackers.</p>
+<p>Copyright © 2026 Bhimashankar · <a href="hi/user-guide.html" hreflang="hi" lang="hi">हिंदी</a></p>
+</div>
+</footer>
+</body>
+</html>

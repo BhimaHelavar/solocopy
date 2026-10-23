@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin guide – SoloCopy</title>
+<meta name="description" content="For IT teams: SoloCopy Group Policy settings, Intune deployment, silent MSI install and where the app keeps its data.">
+<meta name="color-scheme" content="light dark">
+<meta name="author" content="Bhimashankar">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/solocopy.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="alternate" hreflang="hi" href="hi/admin-guide.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SoloCopy">
+<meta property="og:title" content="Admin guide – SoloCopy">
+<meta property="og:description" content="For IT teams: SoloCopy Group Policy settings, Intune deployment, silent MSI install and where the app keeps its data.">
+<meta property="og:url" content="https://bhimahelavar.github.io/solocopy/admin-guide.html">
+<meta property="og:image" content="https://bhimahelavar.github.io/solocopy/assets/solocopy-256.png">
+<meta property="og:image:width" content="256">
+<meta property="og:image:height" content="256">
+<meta property="og:image:alt" content="SoloCopy logo">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="brand" href="index.html" aria-label="SoloCopy home"><img src="assets/solocopy.svg" alt="" width="36" height="36"><span>SoloCopy</span></a>
+<a class="lang-switch" href="hi/admin-guide.html" hreflang="hi" lang="hi" aria-label="हिंदी में पढ़ें">हिंदी</a>
+<nav class="site-nav" aria-label="Main">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html">User guide</a></li>
+<li><a href="admin-guide.html" aria-current="page">Admin guide</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html">Support</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap prose">
+<h1>SoloCopy admin guide</h1>
+<p>For office IT teams: how to install SoloCopy on many PCs, control it with Group Policy or Intune, and where it keeps its files. All these features are free.</p>
+<div class="notice" role="note"><p><strong>Formerly “Found Duplicate”.</strong> Only the visible name changed. These stay the same, so existing installs, history and policies keep working: the registry key <code>SOFTWARE\Policies\FoundDuplicate</code>, the template files <code>FoundDuplicate.admx</code> / <code>FoundDuplicate.adml</code>, the data folder <code>%LOCALAPPDATA%\FoundDuplicate</code> and the MSI upgrade code (the SoloCopy MSI replaces an installed Found Duplicate). The program is now <code>SoloCopy.exe</code> in <code>C:\Program Files\SoloCopy</code>.</p></div>
+<nav class="toc" aria-labelledby="toc-title">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#safety">Safety rules users cannot turn off</a></li>
+<li><a href="#policies">The four policies</a></li>
+<li><a href="#gpo">Deploy with Group Policy</a></li>
+<li><a href="#intune">Deploy with Intune</a></li>
+<li><a href="#silent">Silent install and uninstall</a></li>
+<li><a href="#check">Check what applies</a></li>
+<li><a href="#data">Where data lives</a></li>
+<li><a href="#privacy">Privacy</a></li>
+</ul>
+</nav>
+
+<h2 id="safety">Safety rules users cannot turn off</h2>
+<ul>
+<li><strong>Recycle Bin only.</strong> The app never deletes a file permanently.</li>
+<li><strong>Always keeps one copy.</strong> If a selection would remove every copy of a file, that group is skipped.</li>
+<li><strong>No deletes on network or USB drives.</strong> Windows would delete files there permanently. The app can still search them.</li>
+<li><strong>Skips changed files.</strong> If a file's size or modified time changed after the search, it is left alone.</li>
+<li><strong>Leaves very long paths in place.</strong> The Recycle Bin cannot take paths longer than 260 characters.</li>
+</ul>
+<p>Every delete request is written to the delete history (audit log). Users see it under <strong>History</strong> and can export it as CSV or PDF.</p>
+
+<h2 id="policies">The four policies</h2>
+<p>All settings live under <code>HKLM\SOFTWARE\Policies\FoundDuplicate</code> (computer) or <code>HKCU\SOFTWARE\Policies\FoundDuplicate</code> (user). If a value is set in both, the computer value wins. A missing value means “not configured”. The app re-reads the policy before every search and every delete, so after <code>gpupdate</code> no restart is needed.</p>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Policy</th><th scope="col">Registry value and type</th><th scope="col">Effect</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><td>Turn off deleting (report-only mode)</td><td><code>DisableDelete</code>, REG_DWORD</td><td><code>1</code> = users can search, view History and export, but nothing can be moved to the Recycle Bin. <code>0</code> or missing = deleting works as normal.</td><td><code>1</code></td></tr>
+<tr><td>Allow searching only in these folders</td><td><code>AllowedFolders</code>, REG_MULTI_SZ</td><td>Searches are allowed only inside these folders and their subfolders. Environment variables are expanded. Empty or missing = no limit.</td><td><code>%USERPROFILE%\Documents</code> and <code>D:\Shared\Team</code></td></tr>
+<tr><td>Block searching network drives</td><td><code>BlockNetworkDrives</code>, REG_DWORD</td><td><code>1</code> = searching UNC paths and mapped network drives is refused. <code>0</code> or missing = allowed.</td><td><code>1</code></td></tr>
+<tr><td>Delete history (audit) folder</td><td><code>AuditLogFolder</code>, REG_EXPAND_SZ</td><td>The delete history is written to this folder instead of the local one. If it cannot be reached, the app writes locally, logs a warning and still finishes the delete. No entry is lost.</td><td><code>\\fileserver\audit$\%USERNAME%</code></td></tr>
+</tbody>
+</table></div>
+<ul>
+<li>For the audit folder, users need permission to create files and add to them, not to delete or change them.</li>
+<li><code>AllowedFolders</code> limits what the app searches; it is not a security boundary. Use NTFS permissions to protect data. Write each folder as a full path.</li>
+<li><code>DisableDelete</code> and <code>BlockNetworkDrives</code> count as on when set to a value the app cannot read, so a typo never loosens them.</li>
+</ul>
+
+<h2 id="gpo">Deploy with Group Policy</h2>
+<p>The MSI puts the templates in <code>C:\Program Files\SoloCopy\policy\</code>: <code>FoundDuplicate.admx</code> and <code>en-US\FoundDuplicate.adml</code>.</p>
+<ol>
+<li>Copy <code>FoundDuplicate.admx</code> to <code>\\&lt;domain&gt;\SYSVOL\&lt;domain&gt;\Policies\PolicyDefinitions</code>.</li>
+<li>Copy <code>FoundDuplicate.adml</code> to the <code>en-US</code> folder inside it.</li>
+<li>In Group Policy Management, edit a Group Policy Object.</li>
+<li>Go to <strong>Computer Configuration &gt; Administrative Templates &gt; SoloCopy</strong> (per PC) or <strong>User Configuration &gt; Administrative Templates &gt; SoloCopy</strong> (per user).</li>
+<li>Set the policies and link the GPO to the right OU.</li>
+<li>On a test PC, run <code>gpupdate /force</code> and <a href="#check">check what applies</a>.</li>
+</ol>
+<p>On a single PC without a domain, copy the files to <code>C:\Windows\PolicyDefinitions</code> (and its <code>en-US</code> folder) and use <code>gpedit.msc</code>. Windows Home editions do not have <code>gpedit.msc</code>.</p>
+
+<h2 id="intune">Deploy with Intune</h2>
+<h3>The app</h3>
+<ul>
+<li><strong>Line-of-business app</strong> (simplest): <strong>Apps &gt; Windows &gt; Add</strong>, type <strong>Line-of-business app</strong>, upload the <code>.msi</code>, assign it to a device group.</li>
+<li><strong>Win32 app</strong> (more control): pack the <code>.msi</code> with the Microsoft Win32 Content Prep Tool. Install command <code>msiexec /i SoloCopy-0.9.0-x64.msi /qn</code>, uninstall command <code>msiexec /x {ProductCode} /qn</code>, install behaviour <strong>System</strong>, detection rule <strong>MSI</strong> with the product code.</li>
+</ul>
+<h3>The policies</h3>
+<ol>
+<li><strong>Devices &gt; Configuration &gt; Import ADMX</strong>: upload <code>FoundDuplicate.admx</code> and <code>FoundDuplicate.adml</code> (both are needed).</li>
+<li>When the import shows it is available, create a profile: <strong>Windows 10 and later</strong>, <strong>Templates &gt; Imported Administrative templates</strong>.</li>
+<li>Pick the SoloCopy template, set the policies, and assign the profile.</li>
+</ol>
+
+<h2 id="silent">Silent install and uninstall</h2>
+<p>The MSI installs per machine to <code>C:\Program Files\SoloCopy</code>, so run these as administrator or from a tool that runs as SYSTEM.</p>
+<pre><code>msiexec /i SoloCopy-0.9.0-x64.msi /qn /l*v install.log
+msiexec /x SoloCopy-0.9.0-x64.msi /qn
+msiexec /x {ProductCode} /qn</code></pre>
+<p>To find the product code on a PC where the app is installed (PowerShell):</p>
+<pre><code>Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* |
+  Where-Object DisplayName -eq 'SoloCopy' |
+  Select-Object PSChildName, DisplayVersion</code></pre>
+<p>Installing a newer MSI replaces the old version. Installing an older version over a newer one is refused. Uninstalling keeps each user's data folder. No .NET install is needed; the WebView2 Runtime is part of Windows 10 and 11. For PCs without internet, install Microsoft's WebView2 Evergreen Standalone Installer first.</p>
+
+<h2 id="check">Check what applies</h2>
+<ul>
+<li>When any policy is set, the app shows <strong>Managed by your organization</strong>.</li>
+<li><strong>Copy diagnostics</strong> copies the effective policy, versions, folders and the last 200 log lines.</li>
+<li>The log records the effective policy each time the app starts.</li>
+<li>Raw values: <code>reg query HKLM\SOFTWARE\Policies\FoundDuplicate</code> and <code>reg query HKCU\SOFTWARE\Policies\FoundDuplicate</code>.</li>
+</ul>
+<p>For a quick test without Group Policy, set a value from an administrator PowerShell while signed in as the test user, for example report-only mode:</p>
+<pre><code>reg add HKCU\SOFTWARE\Policies\FoundDuplicate /v DisableDelete /t REG_DWORD /d 1 /f
+reg delete HKCU\SOFTWARE\Policies\FoundDuplicate /f</code></pre>
+
+<h2 id="data">Where data lives</h2>
+<p>Everything is per Windows user, under <code>%LOCALAPPDATA%\FoundDuplicate</code>:</p>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">File or folder</th><th scope="col">What it is</th></tr></thead>
+<tbody>
+<tr><td><code>audit\audit-YYYY-MM.jsonl</code></td><td>The delete history: one JSON line per file in every delete request (date, user, PC, path, size, result, content SHA-256, kept copy). Lines are only ever added. If <code>AuditLogFolder</code> is set, new lines go there instead.</td></tr>
+<tr><td><code>logs\app-YYYYMMDD.log</code></td><td>Daily log: app start, versions, searches, delete summaries and errors. Kept 14 days. File contents are never logged.</td></tr>
+<tr><td><code>settings.json</code></td><td>The user's last folder, search options and language. If missing or damaged, the app uses the defaults.</td></tr>
+<tr><td><code>WebView2\</code></td><td>Data for the browser engine that draws the app window.</td></tr>
+</tbody>
+</table></div>
+<p>With the Microsoft Store version, Windows may keep these files under <code>%LOCALAPPDATA%\Packages\</code> instead. <strong>Copy diagnostics</strong> shows the folders the app really uses.</p>
+
+<h2 id="privacy">Privacy</h2>
+<p>Nothing leaves the PC, except the delete history when you set <code>AuditLogFolder</code>; it goes only to the folder you choose. There is no telemetry, and the app window does not load pages from the internet. See the <a href="privacy.html">privacy policy</a>.</p>
+<p>Need help with a deployment? Organisations can ask for paid support or services at <a href="mailto:bhimarh2020@gmail.com">bhimarh2020@gmail.com</a>. The app itself, including every admin feature, stays free.</p>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<nav aria-label="Site">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html">User guide</a></li>
+<li><a href="admin-guide.html" aria-current="page">Admin guide</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html">Support</a></li>
+</ul>
+</nav>
+<p>SoloCopy 0.9.0 beta · Free for home and work · Published by Bhimashankar, India.<br>This website uses no cookies, no scripts and no trackers.</p>
+<p>Copyright © 2026 Bhimashankar · <a href="hi/admin-guide.html" hreflang="hi" lang="hi">हिंदी</a></p>
+</div>
+</footer>
+</body>
+</html>
