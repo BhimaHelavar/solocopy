@@ -10,7 +10,6 @@
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" href="assets/solocopy.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/site.css">
-<link rel="alternate" hreflang="hi" href="hi/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SoloCopy">
 <meta property="og:title" content="SoloCopy — Duplicate File Cleaner">
@@ -28,7 +27,6 @@
 <header class="site-header">
 <div class="wrap header-inner">
 <a class="brand" href="index.html" aria-label="SoloCopy home"><img src="assets/solocopy.svg" alt="" width="36" height="36"><span>SoloCopy</span></a>
-<a class="lang-switch" href="hi/index.html" hreflang="hi" lang="hi" aria-label="हिंदी में पढ़ें">हिंदी</a>
 <nav class="site-nav" aria-label="Main">
 <ul>
 <li><a href="index.html" aria-current="page">Home</a></li>
@@ -49,7 +47,7 @@
 <h1 id="page-title">SoloCopy — Duplicate File Cleaner</h1>
 <p class="lead">Find duplicate files and move the extra copies to the Recycle Bin. One copy always stays.</p>
 <p class="actions"><a class="btn btn-primary" href="#download">Download for Windows</a> <a class="btn btn-secondary" href="user-guide.html">Read the user guide</a></p>
-<p class="small">Free for home and work · Windows 10 and 11 · English and <span lang="hi">हिंदी</span> · Works offline</p>
+<p class="small">Free for home and work · Windows 10 and 11 · English · Works offline</p>
 </div>
 </div>
 </section>
@@ -85,7 +83,6 @@
 <div class="cards">
 <article><h3>Exact copies and same names</h3><p>Finds files with exactly the same content, even when their names differ, by comparing the content itself. Also finds same-name files such as “Report.pdf” and “Report (1).pdf”. These may be different versions, so you decide.</p></article>
 <article><h3>History, CSV, PDF and Restore</h3><p>Every delete is recorded in <strong>History</strong>: date, file, size and result. Select files and click <strong>Restore</strong> to put them back. Export the History to CSV (for Excel) or to a PDF report.</p></article>
-<article><h3>English and <span lang="hi">हिंदी</span></h3><p>Switch the language in the app at any time. PDF reports show Hindi text correctly.</p></article>
 <article><h3>Admin controls for IT</h3><p>Report-only mode, allowed folders, blocked network drives and a central delete history, set with Group Policy or Intune. See the <a href="admin-guide.html">admin guide</a>.</p></article>
 </div>
 </div>
@@ -119,6 +116,53 @@
 </div>
 </section>
 
+<!-- When the Pro add-on is live in the Microsoft Store, replace the "Get Pro" placeholder with a link to the Store. -->
+<section class="section" aria-labelledby="pricing">
+<div class="wrap">
+<h2 id="pricing">Pricing</h2>
+<div class="cards pricing">
+<article><h3>Free</h3>
+<p class="price">₹0 · US$0</p>
+<p>Everything SoloCopy does today, at home and at work, with no time limit and no licence key:</p>
+<ul>
+<li>Exact copies and same-name files</li>
+<li>Recycle Bin only, one copy always kept</li>
+<li>History and Restore</li>
+<li>Export to CSV and PDF</li>
+<li>Report-only mode, allowed folders, blocked network drives and a central delete history for IT teams</li>
+</ul>
+<p>Free features never move to Pro.</p>
+<p><a class="btn btn-secondary" href="#download">Download</a></p></article>
+<article><h3>SoloCopy Pro</h3>
+<p class="price">One-time: ₹499 in India · US$9.99 in high-income countries · US$4.99 elsewhere</p>
+<p><strong>Launch offer for early customers:</strong> ₹299 in India, for a limited time.</p>
+<p>Everything in Free, plus:</p>
+<ul>
+<li>Reports of search results (coming soon)</li>
+<li>Scheduled report-only scans (coming soon)</li>
+<li>Advanced search (coming soon)</li>
+<li>Saved search profiles and exclusion rules (coming soon)</li>
+<li>Rules that choose which copy to keep (coming soon)</li>
+</ul>
+<p>Bought once inside the Microsoft Store version; Microsoft handles the payment and refunds. The MSI version from this page stays Free.</p>
+<p><span class="btn btn-secondary" aria-disabled="true">Get Pro<small>Coming soon</small></span></p></article>
+<article><h3>Business</h3>
+<p class="price">By invoice, minimum 10 PCs: ₹799 per PC per year in India · US$19 per PC per year elsewhere</p>
+<p><strong>Site licence</strong> for one office: ₹49,999 per year in India · US$999 per year elsewhere.</p>
+<p>For offices with file servers:</p>
+<ul>
+<li>Cleaning up on network shares (coming soon)</li>
+<li>Deletion approval with quarantine (coming soon)</li>
+<li>Central audit folder</li>
+<li>Group Policy</li>
+<li>Priority support</li>
+</ul>
+<p><a class="btn btn-primary" href="mailto:bhimarh2020@gmail.com?subject=SoloCopy%20Business">Contact us</a></p></article>
+</div>
+<p class="small">GST applies in India. Prices are subject to change. In the Microsoft Store, Pro is shown in your local currency.</p>
+</div>
+</section>
+
 <section class="section" aria-labelledby="enterprise">
 <div class="wrap">
 <h2 id="enterprise">For offices and IT teams</h2>
@@ -128,7 +172,7 @@
 <article><h3>Silent MSI install</h3><p>Per-machine install to <code>C:\Program Files\SoloCopy</code>:</p>
 <pre><code>msiexec /i SoloCopy-0.9.0-x64.msi /qn</code></pre></article>
 </div>
-<p>SoloCopy is free, including all the features for IT administrators (see section 1 of the <a href="terms.html">terms</a>). No licence key is needed. Organisations that want <strong>paid support or services</strong>, such as priority support, help with deployment or custom terms, can write to <a href="mailto:bhimarh2020@gmail.com">bhimarh2020@gmail.com</a>.</p>
+<p>SoloCopy is free, including all the features for IT administrators (see section 1 of the <a href="terms.html">terms</a>). No licence key is needed. For network shares, deletion approval and priority support, see <a href="#pricing">Business</a>. Organisations that want help with deployment or custom terms can write to <a href="mailto:bhimarh2020@gmail.com">bhimarh2020@gmail.com</a>.</p>
 <p><a class="btn btn-secondary" href="admin-guide.html">Read the admin guide</a></p>
 </div>
 </section>
@@ -146,7 +190,7 @@
 </ul>
 </nav>
 <p>SoloCopy 0.9.0 beta · Free for home and work · Published by Bhimashankar, India.<br>This website uses no cookies, no scripts and no trackers.</p>
-<p>Copyright © 2026 Bhimashankar · <a href="hi/index.html" hreflang="hi" lang="hi">हिंदी</a></p>
+<p>Copyright © 2026 Bhimashankar</p>
 </div>
 </footer>
 </body>

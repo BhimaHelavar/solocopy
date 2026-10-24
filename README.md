@@ -2,13 +2,23 @@
 
 SoloCopy finds duplicate files on a Windows PC (exact copies and files with the same name) and moves the
 extra copies to the Recycle Bin. It always keeps at least one copy, works offline, and is available in
-English and Hindi.
+English.
 
 - **Website:** https://bhimahelavar.github.io/solocopy
 - **Download:** [Releases](https://github.com/BhimaHelavar/solocopy/releases) (public beta 0.9.0, Windows 10 and 11, 64-bit).
   Check the file against `SHA256SUMS.txt` on the same release page.
 - **Licence:** [EULA.md](EULA.md) · **Privacy:** [PRIVACY.md](PRIVACY.md)
 - **Help and security reports:** bhimarh2020@gmail.com
+
+## Pricing
+
+- **Free:** everything SoloCopy does today, at home and at work.
+- **SoloCopy Pro** (coming soon, in the Microsoft Store version): one-time ₹499 in India, US$9.99 in high-income
+  countries, US$4.99 elsewhere. Launch offer for early customers: ₹299 in India, for a limited time.
+- **Business** (by invoice, minimum 10 PCs): ₹799 per PC per year in India, US$19 per PC per year elsewhere;
+  one-office site licence ₹49,999 per year in India, US$999 per year elsewhere. Write to bhimarh2020@gmail.com.
+
+GST applies in India. Prices are subject to change. Details: [Pricing](https://bhimahelavar.github.io/solocopy/#pricing).
 
 This repository holds only the website and the downloads. The source code is private.
 
