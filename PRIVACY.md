@@ -108,5 +108,5 @@ If we change this policy, we will update the "Last updated" date and publish the
 
 ## Contact
 
-Questions about privacy: bhimarh2020@gmail.com
+Questions about privacy: support.solocopy@gmail.com
 Publisher: Bhimashankar, India

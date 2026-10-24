@@ -81,7 +81,7 @@ The free version of the App stays free to use under this Agreement. SoloCopy Pro
 - help with deployment;
 - custom terms.
 
-Contact: bhimarh2020@gmail.com
+Contact: support.solocopy@gmail.com
 
 Paid support and services need a separate written agreement with the Publisher. That agreement applies together with this Agreement. If the two differ, the separate written agreement applies to those services.
 
@@ -115,4 +115,4 @@ This Agreement, together with the Privacy Policy and, if you have one, a separat
 
 ## 15. Contact
 
-Questions about this Agreement: bhimarh2020@gmail.com
+Questions about this Agreement: support.solocopy@gmail.com
