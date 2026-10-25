@@ -2,7 +2,7 @@
 
 > Draft.
 
-Last updated: 23 October 2026
+Last updated: 25 October 2026
 Applies to SoloCopy 0.9.0 (public beta) and later
 Online version: https://bhimahelavar.github.io/solocopy/privacy
 
@@ -72,6 +72,12 @@ When you export the history to CSV or PDF, the file is saved only in the place y
 - **Remove your history, logs and settings:** close the app and delete the folder `%LOCALAPPDATA%\FoundDuplicate`. (Type `%LOCALAPPDATA%` in the File Explorer address bar to find it.)
 - **Uninstalling keeps this folder on purpose.** The delete history may be needed later. Delete the folder by hand if you want it gone.
 - **Microsoft Store version:** Windows may keep these files in the app's own private folder instead, under `%LOCALAPPDATA%\Packages\`. Windows removes that folder when you uninstall the Store version.
+
+## Emails to SoloCopy Support
+
+_New section, for lawyer review._
+
+If you email support.solocopy@gmail.com, your email is kept in that Gmail account, which Google provides. To help us answer quickly, the text of your email may be processed by an AI service, Google Gemini (free tier), which suggests a draft reply. Before the text is sent to Google Gemini, email addresses and phone numbers in it are removed. Other details you write in the message, such as your name, may still be included. On the free tier, Google may use this text to improve its services. A person on our team reviews every reply before it is sent; no reply is sent automatically. Please do not put passwords, card numbers or other sensitive details in a support email.
 
 ## Children
 
