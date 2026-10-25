@@ -18,7 +18,7 @@ English.
   Adds scheduled scans that only report (never delete) and Save report as HTML or Excel.
 - **Business** (by invoice, minimum 10 PCs): ₹799 per PC per year in India, US$19 per PC per year elsewhere;
   one-office site licence ₹49,999 per year in India, US$999 per year elsewhere. Write to support.solocopy@gmail.com.
-  Adds report-only network share searches and deletion approval with quarantine (optional second approver,
+  Includes all Pro features (also in the MSI version) and adds report-only network share searches and deletion approval with quarantine (optional second approver,
   Simple and Strict presets, permanent deletion off by default).
 
 Pro and Business features come with the next release; public beta 0.9.0 has the Free features.
