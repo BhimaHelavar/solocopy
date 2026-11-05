@@ -15,13 +15,13 @@ English.
 - **Free:** everything SoloCopy does today, at home and at work.
 - **SoloCopy Pro** (coming soon, in the Microsoft Store version): one-time ₹499 in India, US$9.99 in high-income
   countries, US$4.99 elsewhere. Launch offer for early customers: ₹299 in India, for a limited time.
-  Adds scheduled scans that only report (never delete) and Save report as HTML or Excel.
-- **Business** (by invoice, minimum 10 PCs): ₹799 per PC per year in India, US$19 per PC per year elsewhere;
-  one-office site licence ₹49,999 per year in India, US$999 per year elsewhere. Write to support.solocopy@gmail.com.
-  Includes all Pro features (also in the MSI version) and adds report-only network share searches and deletion approval with quarantine (optional second approver,
-  Simple and Strict presets, permanent deletion off by default).
+  Adds scheduled scans that only report (never delete), Save report as HTML or Excel, Recycle Bin clean-up and
+  report-only network folder searches. Offices can buy one Pro licence file for many PCs by invoice (also for the
+  MSI version): write to support.solocopy@gmail.com.
+- **Try Pro free for a month:** testers get a 30-day Pro copy and send us feedback. See
+  [Try Pro free for a month](https://bhimahelavar.github.io/solocopy/#testers).
 
-Pro and Business features come with the next release; public beta 0.9.0 has the Free features.
+Pro features come with the next release; public beta 0.9.0 has the Free features.
 
 GST applies in India. Prices are subject to change. Details: [Pricing](https://bhimahelavar.github.io/solocopy/#pricing).
 
