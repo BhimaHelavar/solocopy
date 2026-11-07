@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI guide – SoloCopy</title>
+<meta name="description" content="How to use Read &amp; summarise in SoloCopy: read a folder of documents, check what was unclear, and make a summary, table, report or email draft. Includes the AI settings.">
+<meta name="color-scheme" content="light dark">
+<meta name="author" content="Bhimashankar">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/solocopy.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SoloCopy">
+<meta property="og:title" content="AI guide – SoloCopy">
+<meta property="og:description" content="How to use Read &amp; summarise in SoloCopy: read a folder of documents, check what was unclear, and make a summary, table, report or email draft.">
+<meta property="og:url" content="https://bhimahelavar.github.io/solocopy/ai-guide.html">
+<meta property="og:image" content="https://bhimahelavar.github.io/solocopy/assets/solocopy-256.png">
+<meta property="og:image:width" content="256">
+<meta property="og:image:height" content="256">
+<meta property="og:image:alt" content="SoloCopy logo">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="brand" href="index.html" aria-label="SoloCopy home"><img src="assets/solocopy.svg" alt="" width="36" height="36"><span>SoloCopy</span></a>
+<nav class="site-nav" aria-label="Main">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html">User guide</a></li>
+<li><a href="ai-guide.html" aria-current="page">AI guide</a></li>
+<li><a href="admin-guide.html">Admin guide</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html">Support</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap prose">
+<h1>Read &amp; summarise: AI guide</h1>
+<div class="notice" role="note">
+<p><strong>Coming in a future version.</strong> Read &amp; summarise is being tested and is not in public beta 0.9.0. This guide shows how it will work. Screens and names may still change before release.</p>
+</div>
+<p><strong>Read &amp; summarise</strong> reads the documents in a folder (PDF, Word, Excel, scans and photos) and tells you what it could not read. It then makes a summary that shows the file and page each line comes from. From that you can make an Excel table, an office note, a list of deadlines, a report, a presentation or an email draft.</p>
+<p>Your files are only read, never changed, moved or deleted.</p>
+
+<nav class="toc" aria-labelledby="toc-title">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#open">Open Read &amp; summarise</a></li>
+<li><a href="#ai-settings">Set up AI (do this once)</a></li>
+<li><a href="#step1">Step 1: Choose a folder</a></li>
+<li><a href="#step2">Step 2: Read</a></li>
+<li><a href="#about">About your files</a></li>
+<li><a href="#step3">Step 3: Summary</a></li>
+<li><a href="#step4">Step 4: Questions</a></li>
+<li><a href="#step5">Step 5: Create</a></li>
+<li><a href="#scans">Scanned papers and photos</a></li>
+<li><a href="#privacy">Where your documents go</a></li>
+<li><a href="#trial">Trial and Pro</a></li>
+<li><a href="#office">At work: rules from your IT team</a></li>
+<li><a href="#problems">If something goes wrong</a></li>
+</ul>
+</nav>
+
+<h2 id="open">Open Read &amp; summarise</h2>
+<p>In SoloCopy, open the <strong>Tools</strong> menu and choose <strong>Read &amp; summarise</strong>. The screen has five steps: <strong>Choose a folder</strong>, <strong>Read</strong>, <strong>Summary</strong>, <strong>Questions</strong> and <strong>Create</strong>. If nothing was unclear, the Questions step is left out and Create becomes step 4.</p>
+<p>If you see “The doc reader is not installed on this PC”, the reading part is missing. Ask your IT team to install it.</p>
+
+<h2 id="ai-settings">Set up AI (do this once)</h2>
+<p>Open <strong>Tools</strong> &gt; <strong>AI settings</strong>, or click <strong>AI settings…</strong> in step 1. Under <strong>How should SoloCopy use AI?</strong> choose one of these:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Choice</th><th scope="col">What it means</th><th scope="col">Good for</th></tr></thead>
+<tbody>
+<tr><td><strong>Let SoloCopy choose</strong></td><td>Picks the best mode for this PC. The one it suggests is marked “Suggested for this PC”.</td><td>Most people</td></tr>
+<tr><td><strong>Offline</strong></td><td>Everything stays on this PC.</td><td>PCs with about 16 GB of memory or more</td></tr>
+<tr><td><strong>Offline (light)</strong></td><td>Everything stays on this PC, with a smaller AI.</td><td>PCs with less memory</td></tr>
+<tr><td><strong>Hybrid</strong></td><td>Files are read on this PC. Only a masked summary request goes to the online AI (Google Gemini).</td><td>Faster summaries on PCs that are too slow for Offline</td></tr>
+</tbody>
+</table>
+</div>
+<h3>AI on this PC (Offline and Offline light)</h3>
+<ol>
+<li>Install <a href="https://ollama.com/">Ollama</a> on the PC and download a model, for example <code>qwen2.5:7b-instruct</code>. llama.cpp works too.</li>
+<li>In <strong>Server address</strong>, keep <code>http://127.0.0.1:11434/</code>. The address must be on this PC; SoloCopy refuses any other address.</li>
+<li>Pick the <strong>Model for Offline</strong> and the <strong>Model for Offline (light)</strong>.</li>
+<li>Click <strong>Connect</strong>. You should see “Connected: …, answered in N s.” Then click <strong>Save</strong>.</li>
+</ol>
+<h3>Online AI (Hybrid)</h3>
+<ol>
+<li>Choose <strong>Hybrid</strong> and tick <strong>Only a masked summary request goes to Google Gemini; files are always read on this PC</strong>. Hybrid cannot be used without this tick.</li>
+<li>Get an API key at <a href="https://aistudio.google.com/">aistudio.google.com</a> and paste it in <strong>API key</strong>. The key is saved encrypted for your Windows account and is never shown again. To delete it, click <strong>Remove key</strong>.</li>
+<li>Click <strong>Load models</strong> and pick a model, or choose “Another model” and type its name.</li>
+<li>Click <strong>Connect</strong> to try it, then <strong>Save</strong>.</li>
+</ol>
+<p>Click <strong>Back to Read &amp; summarise</strong> to return; the folder you chose is kept.</p>
+
+<h2 id="step1">Step 1: Choose a folder</h2>
+<p>Click <strong>Choose folder…</strong> and pick the folder of documents. The top of the step shows:</p>
+<ul>
+<li>the AI mode, for example “AI: On this PC (light)”. “set by your IT admin” means your IT team chose it;</li>
+<li>“Pro: no file limit”, or how many trial files are left, with a <strong>Get Pro</strong> link.</li>
+</ul>
+<p>Click <strong>Read the documents</strong>.</p>
+
+<h2 id="step2">Step 2: Read</h2>
+<p>A live count shows how far reading has got, for example:</p>
+<p><strong>7 files found = 5 read + 0 waiting for you + 2 could not be read</strong></p>
+<p>Every file in the folder is counted, so nothing is silently skipped. Click <strong>Stop reading</strong> to stop; what was read so far is kept, and <strong>Read again</strong> goes on from there. When reading ends, click <strong>Show the files that were not read</strong> to see each one and the reason.</p>
+
+<h2 id="about">About your files</h2>
+<p>This part helps you check what each file is and what it says.</p>
+<ul>
+<li><strong>What kind of documents are these?</strong> Pick the kind, for example invoices, court orders, government letters, bank documents (cheque, passbook), ID documents, certificates or receipts. Or choose <strong>Detect automatically</strong> and click <strong>Check the files</strong>. Each file gets a type with “How sure”. A badge shows whether the type came from the AI (“AI suggestion”) or the file name (“From file name”). Files marked <strong>Please check</strong> need you to look; you can change any file's type.</li>
+<li><strong>+ Make my own category…</strong> for a kind of document that is not listed. Give it a name, for example “Gate pass”, and the details to find, for example “Visitor name, Valid till, Vehicle number”.</li>
+<li><strong>Score.</strong> Each file shows how many of the details for its kind were found in it or entered by you. Under <strong>To raise the score</strong>, type what you know that the file does not say. <strong>Checked</strong> means every test passed; <strong>Needs review</strong> lists the checks that did not pass.</li>
+<li><strong>Remove from this run</strong> leaves a file out of the score and the results. Nothing is deleted from your computer. <strong>Put back</strong> includes it again.</li>
+<li><strong>Describe each file</strong> gives a short description of every file, by its type, with the page each value is on. A value the AI gave but that is not in the file is marked <strong>not confirmed</strong>; check the file before you use it. A value that was read but does not look right is marked <strong>please confirm</strong> and is not used in any result until you click <strong>Accept</strong> or type the right value.</li>
+<li><strong>Ask about your files.</strong> Type a question, for example “What is the next hearing date?” or “What are the account number and IFSC?”, and click <strong>Ask</strong>. Answers come only from your files and show the file, the page and the words they are based on.</li>
+</ul>
+
+<h2 id="step3">Step 3: Summary</h2>
+<p>Click <strong>Summarise</strong>. You get <strong>The folder at a glance</strong> and a summary <strong>File by file</strong>. Every line shows the file and page it comes from, so you can check it.</p>
+<p>Below that are the <strong>Facts found</strong>: files, pages, dates, amounts, case numbers, file numbers, letter numbers and open questions. A line at the end says where the summary was made: “Made on this PC. Nothing left this PC.” or “Made with online AI.”</p>
+<p>If the AI is not available, no summary is made, but the facts and the Create step still work.</p>
+
+<h2 id="step4">Step 4: Questions</h2>
+<p>When the reader was not sure about some text, for example a smudged number on a scan, it asks you. Each question shows the picture of that spot, what was read (“Read as: …”) and how sure the reader was. Type what it really says in <strong>What does it say?</strong> and press <strong>Enter</strong> or <strong>Save</strong>; the next question opens. Your answers are used in the summary and in everything you create.</p>
+
+<h2 id="step5">Step 5: Create</h2>
+<ol>
+<li>Under <strong>What do you need from these files?</strong> choose one:
+<ul>
+<li><strong>Invoices into Excel</strong>: only invoices whose amounts, tax numbers and date pass every check are entered; the rest are listed apart with the reason.</li>
+<li><strong>A register or table</strong>: one row per file with the details you pick, as Excel, CSV and a web page with charts.</li>
+<li><strong>An office note</strong>: a short Word and PDF note of what each file says, the dates to note and what is not found.</li>
+<li><strong>Dates and deadlines</strong>: every hearing, last date and due date in one sorted list with days left, plus a calendar file for Outlook or your phone.</li>
+<li><strong>Missing information</strong>: what the files do not say, with tick boxes, so you know what to ask for.</li>
+<li><strong>A detailed report</strong>: Word and PDF, with a description of each file and where every value was found.</li>
+<li><strong>A presentation</strong>: a PowerPoint with a title slide, an overview and one slide per file.</li>
+<li><strong>An email draft</strong>: a summary written as an email for you to check and send yourself.</li>
+</ul></li>
+<li>Under <strong>Save results in</strong>, choose a folder. Nothing is saved anywhere else.</li>
+<li>Pick which documents and details to include, then click <strong>Prepare and preview</strong>. A window shows exactly what will be created. Nothing has been written yet.</li>
+<li>Click <strong>Create</strong>. Then use <strong>Show in folder</strong> to open the result in File Explorer.</li>
+</ol>
+<p><strong>How far this result can be trusted</strong> shows how many files are ready, for example “Ready 80%”. Files that are not ready are left out of Word, PDF, email and presentation results, and are marked “Needs review” in Excel. To raise it, answer their questions or remove them from the run in About your files.</p>
+<p>SoloCopy never sends email. An email is always a draft that you open, check and send from your own mail program.</p>
+
+<h2 id="scans">Scanned papers and photos</h2>
+<p>Scanned PDFs and photos (PNG, JPG, TIF, BMP) have no text inside them, only a picture of the page. To read them, the doc reader uses OCR, which turns the picture into text on this PC. Text that OCR is not sure about becomes a question in step 4.</p>
+<p>If OCR is not set up on the PC, such pages are listed as “needs OCR” and the file shows “No readable text”. You can still set the file's type yourself. Ask your IT team to turn on the OCR reader.</p>
+<p>For the best results, scan at 300 dpi, keep pages straight, and photograph documents in good light without shadows.</p>
+
+<h2 id="privacy">Where your documents go</h2>
+<ul class="checks">
+<li><strong>Files are read on this PC.</strong> The documents themselves are never uploaded, including in Hybrid.</li>
+<li><strong>Offline and Offline (light) send nothing.</strong> The AI runs on this PC, and its address must be on this PC.</li>
+<li><strong>Hybrid sends only a masked request.</strong> Names, numbers and addresses are masked first, and Hybrid is used only after you tick the consent box. Your IT team can turn online AI off.</li>
+<li><strong>Your files are never changed.</strong> Results are written only to the folder you choose, and only when you click Create.</li>
+<li><strong>Saved text is encrypted</strong> for your Windows account.</li>
+</ul>
+<p>The <a href="privacy.html">privacy policy</a> covers public beta 0.9.0. It will be updated to cover Read &amp; summarise before the feature is released.</p>
+
+<h2 id="trial">Trial and Pro</h2>
+<p>Read &amp; summarise is part of <a href="index.html#pricing">SoloCopy Pro</a>. Without Pro you can try it on a small number of files; step 1 shows how many trial files are left. With Pro there is no file limit.</p>
+
+<h2 id="office">At work: rules from your IT team</h2>
+<p>If you see “Your IT team manages some doc reader settings on this PC”, your IT team has set rules. For example, they may allow only some folders, allow only some AI modes, or turn online AI off. Choices they control show “set by your IT admin”, and actions they block show “Your IT team does not allow this here”. Ask them if something is not allowed.</p>
+
+<h2 id="problems">If something goes wrong</h2>
+<ul>
+<li><strong>“The AI is not available right now”</strong>: for Offline, check that Ollama is running and click <strong>Connect</strong> in AI settings. For Hybrid, check the internet connection and that a key is saved. The facts and the Create step still work.</li>
+<li><strong>Connect shows an error</strong>: check the server address (Offline) or the API key and model (Hybrid).</li>
+<li><strong>A file “could not be read”</strong>: it may be password-protected or damaged. Open it in its own program to check.</li>
+<li><strong>Many questions on a scan</strong>: scan it again more clearly, or type the answers in step 4.</li>
+</ul>
+<p>Still stuck? See <a href="support.html">Support</a>.</p>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<nav aria-label="Site">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html">User guide</a></li>
+<li><a href="ai-guide.html" aria-current="page">AI guide</a></li>
+<li><a href="admin-guide.html">Admin guide</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html">Support</a></li>
+</ul>
+</nav>
+<p>SoloCopy 0.9.0 beta · Free for home and work · Published by Bhimashankar, India.<br>This website uses no cookies, no scripts and no trackers.</p>
+<p>Copyright © 2026 Bhimashankar</p>
+</div>
+</footer>
+</body>
+</html>
