@@ -101,7 +101,7 @@
 <h3>The app</h3>
 <ul>
 <li><strong>Line-of-business app</strong> (simplest): <strong>Apps &gt; Windows &gt; Add</strong>, type <strong>Line-of-business app</strong>, upload the <code>.msi</code>, assign it to a device group.</li>
-<li><strong>Win32 app</strong> (more control): pack the <code>.msi</code> with the Microsoft Win32 Content Prep Tool. Install command <code>msiexec /i SoloCopy-0.9.0-x64.msi /qn</code>, uninstall command <code>msiexec /x {ProductCode} /qn</code>, install behaviour <strong>System</strong>, detection rule <strong>MSI</strong> with the product code.</li>
+<li><strong>Win32 app</strong> (more control): pack the <code>.msi</code> with the Microsoft Win32 Content Prep Tool. Install command <code>msiexec /i SoloCopy-1.0.0-x64.msi /qn</code>, uninstall command <code>msiexec /x {ProductCode} /qn</code>, install behaviour <strong>System</strong>, detection rule <strong>MSI</strong> with the product code.</li>
 </ul>
 <h3>The policies</h3>
 <ol>
@@ -112,8 +112,8 @@
 
 <h2 id="silent">Silent install and uninstall</h2>
 <p>The MSI installs per machine to <code>C:\Program Files\SoloCopy</code>, so run these as administrator or from a tool that runs as SYSTEM.</p>
-<pre><code>msiexec /i SoloCopy-0.9.0-x64.msi /qn /l*v install.log
-msiexec /x SoloCopy-0.9.0-x64.msi /qn
+<pre><code>msiexec /i SoloCopy-1.0.0-x64.msi /qn /l*v install.log
+msiexec /x SoloCopy-1.0.0-x64.msi /qn
 msiexec /x {ProductCode} /qn</code></pre>
 <p>To find the product code on a PC where the app is installed (PowerShell):</p>
 <pre><code>Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* |
@@ -162,7 +162,7 @@ reg delete HKCU\SOFTWARE\Policies\FoundDuplicate /f</code></pre>
 <li><a href="support.html">Support</a></li>
 </ul>
 </nav>
-<p>SoloCopy 0.9.0 beta · Free for home and work · Published by Bhimashankar, India.<br>This website uses no cookies, no scripts and no trackers.</p>
+<p>SoloCopy 1.0.0 · Free for home and work · Published by Bhimashankar, India.<br>This website uses no cookies, no scripts and no trackers.</p>
 <p>Copyright © 2026 Bhimashankar</p>
 </div>
 </footer>
