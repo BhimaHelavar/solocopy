@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy policy – SoloCopy</title>
-<meta name="description" content="SoloCopy privacy policy: no account, no telemetry, no network calls. Your files and delete history stay on your PC.">
+<meta name="description" content="SoloCopy privacy policy: no account, no telemetry, no network calls unless you switch on Hybrid AI mode. Your files and delete history stay on your PC.">
 <meta name="color-scheme" content="light dark">
 <meta name="author" content="Bhimashankar">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SoloCopy">
 <meta property="og:title" content="Privacy policy – SoloCopy">
-<meta property="og:description" content="SoloCopy privacy policy: no account, no telemetry, no network calls. Your files and delete history stay on your PC.">
+<meta property="og:description" content="SoloCopy privacy policy: no account, no telemetry, no network calls unless you switch on Hybrid AI mode. Your files and delete history stay on your PC.">
 <meta property="og:url" content="https://bhimahelavar.github.io/solocopy/privacy.html">
 <meta property="og:image" content="https://bhimahelavar.github.io/solocopy/assets/solocopy-256.png">
 <meta property="og:image:width" content="256">
@@ -43,10 +43,8 @@
 <div class="wrap prose">
 <h1>SoloCopy Privacy Policy</h1>
 
-<div class="notice" role="note"><p><strong>Draft privacy policy.</strong></p></div>
-
-<p>Last updated: 25 October 2026<br>
-Applies to SoloCopy 0.9.0 (public beta) and later<br>
+<p>Last updated: 9 November 2026<br>
+Applies to SoloCopy 0.9.0 (public beta) and later, including version 1.0<br>
 Online version: https://bhimahelavar.github.io/solocopy/privacy</p>
 
 <p>SoloCopy – Duplicate File Cleaner (&quot;the app&quot;) is published by Bhimashankar (&quot;we&quot;, &quot;the publisher&quot;). This policy explains what the app stores and what it does not send.</p>
@@ -57,8 +55,8 @@ Online version: https://bhimahelavar.github.io/solocopy/privacy</p>
 <li>There is no account and no sign-in.</li>
 <li>There is no telemetry, no analytics and no tracking.</li>
 <li>The app does not check for updates by itself.</li>
-<li>The app itself makes no network calls. It works fully offline.</li>
-<li>Your files, file names and delete history stay on your PC.</li>
+<li>By default the app makes no network calls and works fully offline. Only if you switch on <strong>Hybrid AI mode</strong>, which is off until you switch it on yourself, does it send parts of the text of files you choose to Google&#39;s Gemini service. See &quot;Reading documents with AI&quot; below.</li>
+<li>Your files, file names and delete history stay on your PC. The one exception is the text sent to Gemini in Hybrid mode.</li>
 <li>We, the publisher, receive nothing from the app.</li>
 </ul>
 
@@ -85,15 +83,30 @@ Online version: https://bhimahelavar.github.io/solocopy/privacy</p>
 <h2>What never leaves your PC</h2>
 
 <ul>
-<li>your files and their contents</li>
+<li>your files and their contents (except the text sent to Gemini if you use Hybrid AI mode)</li>
 <li>file names and folder paths</li>
 <li>the delete history, logs and settings (except in the IT administrator case below)</li>
 <li>information about you, your PC or how you use the app</li>
 </ul>
 
-<p>The app has no code that sends data over the internet. It draws its window from files installed with the app, under a made-up local address (<code>app.founddup.local</code>). This address does not use the network.</p>
+<p>Apart from Hybrid AI mode, the app has no code that sends data over the internet. It draws its window from files installed with the app, under a made-up local address (<code>app.founddup.local</code>). This address does not use the network.</p>
 
 <p><strong>Links.</strong> Some links point to outside websites, for example the Microsoft download page for WebView2, if WebView2 is missing. These open in your normal web browser, and only when you click them. That website's own privacy policy then applies.</p>
+
+<h2>Reading documents with AI</h2>
+
+<p>SoloCopy can read your files and turn them into useful formats such as Excel, Word and PDF. It has three ways to read: <strong>Offline</strong>, <strong>Offline-light</strong> and <strong>Hybrid</strong>.</p>
+
+<ul>
+<li><strong>Offline and Offline-light</strong> read your files with a model on your own PC. Nothing leaves your PC.</li>
+<li><strong>Hybrid</strong> sends parts of the text of the files you ask SoloCopy to read to Google&#39;s Gemini service, using the Gemini key you provide. Before sending, SoloCopy hides email addresses, phone numbers, card numbers, Aadhaar and PAN numbers and other long ID numbers. <strong>Names and addresses are not hidden</strong>, and other details in the text can still be sent. Google handles that text under its own terms and privacy policy for the Gemini service. We do not receive it.</li>
+</ul>
+
+<p>Your files may contain other people&#39;s details, for example CVs, invoices, letters and court papers. Use Hybrid for such files only when you are allowed to, and tell the people concerned where the law requires it. If you are not sure, use Offline.</p>
+
+<p><strong>Consent.</strong> Hybrid mode is off until you switch it on yourself, and switching it on asks you again. You can withdraw your consent at any time by switching it off in Settings. After that, SoloCopy stops sending text to Gemini. Text already sent stays with Google under Google&#39;s terms.</p>
+
+<p>Results made with AI can be wrong. SoloCopy shows where each value came from and holds back values it is not sure about, but please check important results before you act on them. SoloCopy never sends an email by itself, and it deletes only duplicate files, only to the Recycle Bin.</p>
 
 <h2>When your IT administrator sets a history folder</h2>
 
@@ -129,8 +142,6 @@ Online version: https://bhimahelavar.github.io/solocopy/privacy</p>
 
 <h2>Emails to SoloCopy Support</h2>
 
-<p><em>New section, for lawyer review.</em></p>
-
 <p>If you email <a href="mailto:support.solocopy@gmail.com">support.solocopy@gmail.com</a>, your email is kept in that Gmail account, which Google provides. To help us answer quickly, the text of your email may be processed by an AI service, Google Gemini (free tier), which suggests a draft reply. Before the text is sent to Google Gemini, email addresses and phone numbers in it are removed. Other details you write in the message, such as your name, may still be included. On the free tier, Google may use this text to improve its services. A person on our team reviews every reply before it is sent; no reply is sent automatically. Please do not put passwords, card numbers or other sensitive details in a support email.</p>
 
 <h2>Children</h2>
@@ -143,6 +154,10 @@ Online version: https://bhimahelavar.github.io/solocopy/privacy</p>
 
 <p>The delete history on your PC contains a Windows user name, a computer name and file paths. When an organisation uses the app, that organisation decides how this history is kept, used and deleted. The organisation is responsible for its own records, including the delete history, under the Digital Personal Data Protection Act, 2023 and other laws.</p>
 
+<h2>Your rights</h2>
+
+<p>Under the Digital Personal Data Protection Act, 2023 you have the right to know what data is used and why, to correct or erase it, to complain if something goes wrong, and to name someone to act for you. Because SoloCopy keeps your data on your PC, you can see, correct and delete it yourself (see &quot;Your choices&quot;). For anything we hold, such as support emails, write to us and we will answer within 30 days. We keep support emails only as long as needed to help you and as the law allows, and delete them when you ask. If something goes wrong with data we hold, we will tell the people concerned and the authority as the law requires. If you are not satisfied with our answer, you may approach the Data Protection Board of India.</p>
+
 <h2>Changes to this policy</h2>
 
 <p>If we change this policy, we will update the &quot;Last updated&quot; date and publish the new version at https://bhimahelavar.github.io/solocopy/privacy. Important changes will also be listed in the release notes.</p>
@@ -150,7 +165,8 @@ Online version: https://bhimahelavar.github.io/solocopy/privacy</p>
 <h2>Contact</h2>
 
 <p>Questions about privacy: <a href="mailto:support.solocopy@gmail.com">support.solocopy@gmail.com</a><br>
-Publisher: Bhimashankar, India</p>
+Grievance contact: Bhimashankar, <a href="mailto:bhimarh2020@gmail.com">bhimarh2020@gmail.com</a><br>
+Publisher: Bhimashankar, 71, Mathur Layout, 2nd Cross, Yelahanka, Bangalore - 560064, India</p>
 </div>
 </main>
 <footer class="site-footer">
