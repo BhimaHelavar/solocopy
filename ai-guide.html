@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Read &amp; summarise (AI) guide — SoloCopy</title>
+<meta name="description" content="How SoloCopy's Read &amp; summarise turns a folder of documents into checked results: invoices into Excel, case briefs, calendars, email drafts, registers and PDF packs.">
+<meta name="color-scheme" content="light dark">
+<meta name="author" content="Bhimashankar">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/solocopy.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SoloCopy">
+<meta property="og:title" content="Read &amp; summarise (AI) guide — SoloCopy">
+<meta property="og:description" content="Turn a folder of documents into checked results: Excel, briefs, calendars, email drafts and PDF packs.">
+<meta property="og:url" content="https://bhimahelavar.github.io/solocopy/ai-guide.html">
+<meta property="og:image" content="https://bhimahelavar.github.io/solocopy/assets/solocopy-256.png">
+<meta property="og:image:width" content="256">
+<meta property="og:image:height" content="256">
+<meta property="og:image:alt" content="SoloCopy logo">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="brand" href="index.html" aria-label="SoloCopy home"><img src="assets/solocopy.svg" alt="" width="36" height="36"><span>SoloCopy</span></a>
+<nav class="site-nav" aria-label="Main">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html">User guide</a></li>
+<li><a href="ai-guide.html" aria-current="page">AI guide</a></li>
+<li><a href="admin-guide.html">Admin guide</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html">Support</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<div class="wrap prose">
+<h1>Read &amp; summarise (AI) guide</h1>
+<p>Read &amp; summarise reads a folder of documents (text PDFs, Word, Excel and emails) and turns them into the results you need: invoices entered in Excel, a brief of a court case, a calendar of due dates, an email draft, a register, or one PDF to hand in. Every value is checked against the document before it is used.</p>
+<p>Read &amp; summarise is part of <strong>SoloCopy Pro</strong>. The free version can try it on 10 files.</p>
+<nav class="toc" aria-labelledby="toc-title">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#promise">Our promise: nothing wrong written as fact</a></li>
+<li><a href="#steps">The five steps</a></li>
+<li><a href="#results">What you get for each kind of document</a></li>
+<li><a href="#act">Finishing the job: moves and email drafts</a></li>
+<li><a href="#ai">Where the AI runs</a></li>
+<li><a href="#limits">What it does not do</a></li>
+</ul>
+</nav>
+
+<h2 id="promise">Our promise: nothing wrong written as fact</h2>
+<ul>
+<li>A value is used only when the document proves it: the AI must quote the line it read, and SoloCopy checks that the line really says that value.</li>
+<li>Dates go into a calendar only under their own label on the same line, for example “Next date of hearing”, “Due date” or “Valid until”.</li>
+<li>Where a document sums something up (a court's order, a notice's demand), the brief shows the document's own words in quotation marks, never the AI's paraphrase.</li>
+<li>Invoices are checked by arithmetic, GSTIN check digits and a second reading of the amounts. Only invoices that pass every check go on the <strong>Verified</strong> sheet; the others go on <strong>Needs review</strong> with the reason.</li>
+<li>Something that cannot be proven is left out or asked about. Missing is allowed; wrong is not. Still, check a result before you rely on it.</li>
+</ul>
+
+<h2 id="steps">The five steps</h2>
+<ol>
+<li><strong>Choose a folder.</strong> Open <strong>Tools &gt; Read &amp; summarise</strong> and pick the folder of documents. Your files are only read, never changed.</li>
+<li><strong>Read.</strong> SoloCopy reads every file and tells you what it could not read and why.</li>
+<li><strong>Summary.</strong> Each file and the whole folder in a few lines, each line with the file and page it comes from. A line is kept only if that page supports it.</li>
+<li><strong>Questions.</strong> If a value is unclear, you are asked about it. Your answer is used from then on.</li>
+<li><strong>Create.</strong> Choose the kind of documents, then the result you need. You see a preview first; nothing is written until you click <strong>Create</strong>. Choose where the results are saved.</li>
+</ol>
+
+<h2 id="results">What you get for each kind of document</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Documents</th><th scope="col">Results</th></tr></thead>
+<tbody>
+<tr><td>Invoices</td><td>Invoices into Excel (Verified / Needs review), invoice list with charts by vendor, payment calendar (.ics) from printed due dates, draft emails asking vendors to correct mistakes printed on an invoice</td></tr>
+<tr><td>Court cases and orders</td><td>Case brief (Word and PDF) with court, case number, parties, the order in its own words and the next date; hearing calendar; email draft</td></tr>
+<tr><td>Legal notices</td><td>Notice brief with sender, demand, amount and reply deadline; deadline calendar; email draft</td></tr>
+<tr><td>Government letters</td><td>Office note with issuer, reference number, the action asked and the due date; calendar; email draft</td></tr>
+<tr><td>Contracts</td><td>Contract summary with parties, dates, term, payment and how it ends; end-date calendar; email draft</td></tr>
+<tr><td>Emails (.eml, .msg)</td><td>One PDF archive, oldest first, with the attachments inside unchanged; email summary; email draft</td></tr>
+<tr><td>Receipts</td><td>Receipt register (Excel, CSV); expense claim PDF: a cover sheet with the total, then the receipts</td></tr>
+<tr><td>Bank documents</td><td>Bank details register; account numbers show only the last 4 digits</td></tr>
+<tr><td>ID documents</td><td>ID register with numbers masked to the last 4; expiry calendar; KYC pack PDF</td></tr>
+<tr><td>Certificates</td><td>Certificate register; report; application pack PDF</td></tr>
+<tr><td>CVs</td><td>Candidate profile; check CVs against the job (below)</td></tr>
+<tr><td>Anything else</td><td>Detailed report and a table</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Check CVs against the job</h3>
+<p>Type the must-have and nice-to-have requirements, for example <code>C#, SQL Server, B.E.</code>. Each one is looked for in every CV as a whole word or phrase (“Java” does not match “JavaScript”), and the CV line that has it is shown. There is no AI score and nothing is decided for you: CVs are only sorted, and you read them and decide. SoloCopy can prepare an invitation draft or a polite “not shortlisted” draft for each candidate; drafts are never sent.</p>
+
+<h2 id="act">Finishing the job: moves and email drafts</h2>
+<ul>
+<li><strong>Email drafts are only drafts.</strong> They open in Outlook; you check them and send them yourself. SoloCopy never sends email.</li>
+<li><strong>Moving files only after you confirm.</strong> After entering invoices you can move them to a <strong>Done</strong> folder; after checking CVs you can move the ones you decided on to <strong>Not shortlisted</strong>. You see the list and tick what moves. Every move is in <strong>History</strong>, and <strong>Restore</strong> puts the file back. Nothing is deleted.</li>
+</ul>
+
+<h2 id="ai">Where the AI runs</h2>
+<p>Choose in <strong>Tools &gt; AI settings</strong>:</p>
+<ul>
+<li><strong>Offline</strong> and <strong>Offline (light)</strong>: an AI model on this PC (<a href="https://ollama.com">Ollama</a>, installed separately). Nothing about your documents leaves the PC.</li>
+<li><strong>Hybrid</strong>: the text of your documents is sent to Google Gemini with an API key you create yourself. Email addresses, phone numbers, card numbers, Aadhaar, PAN and other long ID or account numbers are replaced before sending; <strong>names, addresses and other words are not masked</strong>. With a free Google key, Google's terms allow it to use the text to improve its services, so use Offline for documents you may not share.</li>
+</ul>
+<p>Your IT team can allow only the offline modes. Read texts are kept on this PC, encrypted for your Windows account, and deleted after 30 days. See the <a href="privacy.html">privacy policy</a>.</p>
+
+<h2 id="limits">What it does not do</h2>
+<ul>
+<li>It does not read scanned pages or photos (no OCR) in this version.</li>
+<li>It does not send email, delete files or decide about people.</li>
+<li>It can be wrong. Values it cannot prove are left out or asked about, but check every result before you use it.</li>
+</ul>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<nav aria-label="Site">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="user-guide.html">User guide</a></li>
+<li><a href="ai-guide.html" aria-current="page">AI guide</a></li>
+<li><a href="admin-guide.html">Admin guide</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="support.html">Support</a></li>
+</ul>
+</nav>
+<p>SoloCopy 1.0.0 · Free for home and work · Published by Bhimashankar, India.<br>This website uses no cookies, no scripts and no trackers.</p>
+<p>Copyright © 2026 Bhimashankar</p>
+</div>
+</footer>
+</body>
+</html>
